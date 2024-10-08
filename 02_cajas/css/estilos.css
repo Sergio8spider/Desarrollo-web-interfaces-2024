@@ -1,0 +1,311 @@
+/* RESETEO ESTILOS */
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* INICIALIZACION DE VARIABLES */
+/* VARIABLES */
+:root {
+    --color-primary: cyan;
+    --color-secondary: blue;
+    --minwidth: 1200px;
+    --color-white: white;
+}
+
+/* FUENTES PERSONALIZADAS */
+
+/* UTILIZACION DE FUENTES
+1em = 16px */
+html {
+    /* Accesibilidad - 62.5 va a equivaler a 10 px sobre 
+    el tamaño normal de nuestro navegador que esta establecido
+    en 16 px */
+    /* font-size: 10px; */
+    font-size: 62.5%;
+}
+
+.container {
+    width: var(--minwidth);
+    border: 5px solid blue;
+    margin: auto;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: var(--color-primary);
+    text-align: center;
+    line-height: 50px;
+    letter-spacing: 3px;
+}
+
+/* BARRA DE NAVEGACION */
+.navbar {
+    width: 100%;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    font-size: 1.4rem;
+    /* font-size: 62.5%; --> equivale a 10 px Fuente Normal; */
+    /* 1.4rem --> equivale a 14px (1.4 * 10px) */
+    box-shadow: 0px 0px 5px grey;
+}
+
+.navbar_list {
+    list-style: none;
+    text-decoration: none;
+    margin: auto;
+    width: 95%;
+}
+
+.list_item {
+    line-height: 40px;
+    /*float:left;*/
+    display: inline-block;
+}
+
+.list_item a {
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    /*margin-left: 20px;
+    margin-right: 20px;
+    margin: 0 20px;
+    */
+    color: white;
+    /*ease-in-outcomenzarálentamente,serámásrápidoenelmediodelaanimaciónyluegoterminarálentamente*/
+    transition: all 300ms;
+    transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+}
+
+.list_item a:hover {
+    background-color: aqua;
+    color: black;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    text-shadow: 0px 0px 4px black;
+}
+
+.item_sublist {
+    display: none;
+    position: absolute;
+    text-align: left;
+    background-color: aqua;
+    color: white;
+    background: linear-gradient(var(--color-primary), var(--color-secondary));
+    width: 100px;
+    box-shadow: 0px 2px 4px grey;
+    z-index: 10;
+    transition: all 500ms ease-in-out;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    text-align: center;
+}
+
+.list_item:hover>.item_sublist {
+    display: block;
+    max-height: 400px;
+    border-radius: 5%;
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    -ms-border-radius: 5%;
+    -o-border-radius: 5%;
+}
+
+.content {
+    width: 69%;
+    border: 1px solid green;
+    float: left;
+    height: var(--minwidth);
+}
+
+.aside {
+    width: 30.5%;
+    border: 1px solid grey;
+    float: left;
+    height: var(--minwidth);
+    text-align: center;
+    overflow-y: scroll;
+}
+
+.content_title {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding: 20px;
+    text-shadow: 0px 4px 4px grey;
+}
+
+.content_box {
+    width: 40%;
+    border: 1px solid var(--color-primary);
+    background-color: aliceblue;
+    float: left;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0px 10px 10px gray;
+}
+
+.content_box-redondo {
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+    padding: 20px;
+}
+
+.content_box-sombra {
+    box-shadow: 5px 5px 10px gray inset;
+}
+
+.content_box-3d{
+    box-shadow: 14px 14px 20px gray;
+}
+
+.content__box--shadowsMultiple{
+    box-shadow: -1px -1px 6px 0 rgb(122, 221, 102), 4px 4px 16px 2px rgb(92, 162, 235);
+}
+
+/*Cajas libres y cajas fijas*/
+.box_free {
+    position: absolute;
+    border: 1px solid black;
+    color: white;
+    width: 100px;
+    height: 100px;
+    font-size: 14px;
+}
+
+.box_free1 {
+    /*position: relative;*/
+    background-color: red;
+    top: 0px;
+    left: 0px;
+}
+
+.box_free2 {
+    background-color: green;
+    top: 0px;
+    left: 200px;
+}
+
+/*Caja fija*/
+.box_static {
+    position: fixed;
+    border: 1px solid blue;
+    background-color: blueviolet;
+    color: white;
+    width: 150px;
+    height: 400px;
+    top: 0px;
+    left: 1%;
+    z-index: 10;
+}
+
+/*Animaciones*/
+.transformed {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    color: white;
+    background-color: blue;
+    margin: 20px;
+    text-align: center;
+    /* transform: rotate(45deg);*/
+    animation-name: rotar;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    30% {
+        transform: rotate(60deg);
+        border-radius: 25px;
+        background-color: yellow;
+        color: black;
+    }
+
+    70% {
+        transform: rotate(27deg);
+        border-radius: 100px;
+        background-color: red;
+        color: white;
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.box_animated {
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    color: white;
+    background-color: blue;
+    margin: 20px;
+    text-align: center;
+    animation: moviendoCaja 15s infinite ease-in-out;
+}
+
+@keyframes moviendoCaja {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    30% {
+        margin-left: 400px;
+        transform: rotate(60deg);
+        border-radius: 25px;
+        background-color: yellow;
+        color: black;
+    }
+
+    70% {
+        margin-left: 1200px;
+        transform: rotate(27deg);
+        border-radius: 100px;
+        background-color: red;
+        color: white;
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/*position absolute*/
+.box_container2 {
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    border: 1px solid black;
+}
+
+.box_free-3 {
+    background-color: red;
+    top: 0px;
+    left: 0x;
+}
+
+.box_free-4 {
+    background-color: green;
+    top: 0px;
+    left: 100px;
+}

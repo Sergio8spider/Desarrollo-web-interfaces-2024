@@ -1,0 +1,83 @@
+/* RESETEO ESTILOS */
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    /* float: left; */
+    border: px solid black;
+}
+
+.container_layout {
+    /* float: left; */
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    /* flex-flow: row nowrap; */
+    justify-content: space-around;
+    width: auto;
+    height: 700px;
+    /* align-items: center; */
+    border: 1px solid black;
+}
+
+.layout_box {
+    /* float: left; */
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid gray;
+    margin: 10px;
+
+    flex-grow: 10;
+    min-width: 20%;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+.layout_box-red {
+    order: 2;
+    background-color: red;
+    color: white;
+    flex-grow: 2;
+    align-self: flex-start;
+    flex-basis: calc((100%/3)+20px);
+}
+.layout_box-yellow {
+    order: 4;
+    background-color: yellow;
+    color: white;
+    flex-grow: 1;
+}
+.layout_box-green {
+    order: 5;
+    background-color: green;
+    color: white;
+    flex-grow: 5;
+}
+.layout_box-orange {
+    order: 3;
+    background-color: orange;
+    color: white;
+    flex-grow: 5;
+    align-self: flex-end;
+}
+.layout_box-pink {
+    order: 6;
+    background-color: pink;
+    color: white;
+    flex-grow: 10;
+}
+.layout_box-blue {
+    order: 1;
+    background-color: blue;
+    color: white;
+    flex-grow: 1;
+    align-self: flex-start;
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios cajas</title>
+</head>
+
+<body>
+    <!-- Ejercicio Resumen - Cajas / Animaciones y Transiciones
+    1.- Crear estructura html que cuente con un Contenedor General, cabecera, menú, 
+    barra lateral, sección de contenido principal, elementos dentro del contenedor 
+    principal y footer 
+    2.- Todo el contenido debe estar dentro del contenedor general y su ancho será 
+    de 1200px
+    3.- Header debe ocupar el 100% del ancho y tener un texto grande.
+    4.- Menú debe tener los elementos uno al lado del otro. Debe disponer de un menú desplegable en diversos elementos.
+    5.- El contenido principal debe tener un ancho del 70%. 
+    6.- El contenido dentro del contenedor principal debe ser una cuadrícula
+    con cuatro líneas de 2 cajas.
+    7.- La barra lateral debe tener un ancho del 30%
+    8.- El footer debe tener un ancho del 100% y estar al final del todo. 
+    
+    Aspectos adicionales:
+    - Caja Libre 1 y 2 (repasar z-index)
+    - Caja Fija a la izquierda
+    - Animaciones y Transiciones (formulario y caja) -->
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="./estilos.css">
+
+    <!-- PRINCIPAL -->
+    <main class="container">
+        <!-- CABECERA -->
+        <header class="header">
+            <h1 class="header_title">Modelo de caja- Sesion 1</h1>
+            <h2 class="header_subtitle">CSS</h2>
+        </header>
+        <!-- BARRA DE NAVEGACION -->
+        <nav class="navbar">
+            <ul class="navbar_list">
+                <li class="list_item"><a href="#">Inicio</a></li>
+                <li class="list_item">
+                    <a href="#">Contenido</a>
+                    <ul class="item_sublist">
+                        <li>Peliculas</li>
+                        <li>Juegos</li>
+                    </ul>
+                </li>
+                <li class="list_item">
+                    <a href="#">Blog</a>
+                    <ul class="item_sublist">
+                        <li>Peliculas</li>
+                        <li>Juegos</li>
+                    </ul>
+                </li>
+                <li class="list_item"><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <!-- FIN BARRA DE NAVEGACION -->
+        <section class="content">
+            <h1 class="content_title">Contenido principal - Cajas</h1>
+            <div class="content_box">
+                <p class="box_info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate accusantium
+                    dicta labore! Officiis obcaecati quo cum est earum quis hic, odit et fugit eligendi sint aliquid
+                    harum libero eaque veritatis!</p>
+            </div>
+            <div class="content_box">
+                <p class="box_info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate accusantium
+                    dicta labore! Officiis obcaecati quo cum est earum quis hic, odit et fugit eligendi sint aliquid
+                    harum libero eaque veritatis!</p>
+            </div>
+            <div class="content_box content_box-sombra">
+                <p class="box_info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate accusantium
+                    dicta labore! Officiis obcaecati quo cum est earum quis hic, odit et fugit eligendi sint aliquid
+                    harum libero eaque veritatis!</p>
+            </div>
+            <div class="content_box content_box-sombra">
+                <p class="box_info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate accusantium
+                    dicta labore! Officiis obcaecati quo cum est earum quis hic, odit et fugit eligendi sint aliquid
+                    harum libero eaque veritatis!</p>
+            </div>
+            <div class="content_box content_box-redondo">
+                <p class="box_info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate accusantium
+                    dicta labore! Officiis obcaecati quo cum est earum quis hic, odit et fugit eligendi sint aliquid
+                    harum libero eaque veritatis!</p>
+            </div>
+            <div class="content_box content_box-redondo">
+                <p class="box_info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate accusantium
+                    dicta labore! Officiis obcaecati quo cum est earum quis hic, odit et fugit eligendi sint aliquid
+                    harum libero eaque veritatis!</p>
+            </div>
+            <div class="content_box">
+                <p class="box_info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate accusantium
+                    dicta labore! Officiis obcaecati quo cum est earum quis hic, odit et fugit eligendi sint aliquid
+                    harum libero eaque veritatis!</p>
+            </div>
+            <div class="content_box">
+                <p class="box_info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate accusantium
+                    dicta labore! Officiis obcaecati quo cum est earum quis hic, odit et fugit eligendi sint aliquid
+                    harum libero eaque veritatis!</p>
+            </div>
+            <div class="content_box content_box-3d">
+                <p class="box_info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate accusantium
+                    dicta labore! Officiis obcaecati quo cum est earum quis hic, odit et fugit eligendi sint aliquid
+                    harum libero eaque veritatis!</p>
+            </div>
+            <div class="content_box content_box-3d">
+                <p class="box_info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate accusantium
+                    dicta labore! Officiis obcaecati quo cum est earum quis hic, odit et fugit eligendi sint aliquid
+                    harum libero eaque veritatis!</p>
+            </div>
+            <div class="content_box content_box-redondo">
+                <p class="box_info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate accusantium
+                    dicta labore! Officiis obcaecati quo cum est earum quis hic, odit et fugit eligendi sint aliquid
+                    harum libero eaque veritatis!</p>
+            </div>
+            <div class="content_box content_box-redondo">
+                <p class="box_info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate accusantium
+                    dicta labore! Officiis obcaecati quo cum est earum quis hic, odit et fugit eligendi sint aliquid
+                    harum libero eaque veritatis!</p>
+            </div>
+            <div class="content_box content__box--shadowsMultiple">
+                <p class="box_info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate accusantium
+                    dicta labore! Officiis obcaecati quo cum est earum quis hic, odit et fugit eligendi sint aliquid
+                    harum libero eaque veritatis!</p>
+            </div>
+            <div class="content_box content__box--shadowsMultiple">
+                <p class="box_info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate accusantium
+                    dicta labore! Officiis obcaecati quo cum est earum quis hic, odit et fugit eligendi sint aliquid
+                    harum libero eaque veritatis!</p>
+            </div>
+        </section>
+        <aside class="aside">
+            <div class="aside_box">
+                <h2 class="box_title">Caja lateral</h2>
+                <p class="box_text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi dolorum excepturi,
+                    veniam esse earum porro quaerat, ut odio accusamus quod atque molestiae assumenda non eveniet nisi
+                    et beatae totam? Nemo?Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+                    exercitationem
+                    dignissimos ex consequatur cumque ducimus? Repudiandae vero sed ut architecto distinctio iure
+                    nesciunt aperiam itaque, aliquid accusamus. Neque, quos nesciunt.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quos dolores, et culpa repudiandae
+                    repellendus reiciendis tempora veritatis commodi, odio ducimus? Unde, incidunt tempore. Nesciunt
+                    esse sequi commodi placeat ratione.</p>
+                <p class="box_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt exercitationem
+                    dignissimos ex consequatur cumque ducimus? Repudiandae vero sed ut architecto distinctio iure
+                    nesciunt aperiam itaque, aliquid accusamus. Neque, quos nesciunt.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic et, eos in amet libero sapiente
+                    blanditiis, repellendus officiis nemo vel perferendis error nulla alias. Nam repellendus minus
+                    laboriosam fugit delectus?</p>
+                <p class="box_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt exercitationem
+                    dignissimos ex consequatur cumque ducimus? Repudiandae vero sed ut architecto distinctio iure
+                    nesciunt aperiam itaque, aliquid accusamus. Neque, quos nesciunt.</p>
+                <p class="box_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt exercitationem
+                    dignissimos ex consequatur cumque ducimus? Repudiandae vero sed ut architecto distinctio iure
+                    nesciunt aperiam itaque, aliquid accusamus. Neque, quos nesciunt.</p>
+            </div>
+        </aside>
+        <div class="box_free box_free1">
+            Caja libre1
+        </div>
+        <div class="box_free box_free2">
+            Caja libre2
+        </div>
+        <div class="box_static">
+            Caja fija
+        </div>
+
+        <footer class="footer">
+            Todos los derechos reservados &copy Sergio Alvarez Mancera
+        </footer>
+    </main>
+    <p class="transformed">Girando</p>
+    <div class="box_animated">Soy una Caja</div>
+    <section class="box_container2">
+        CAJA CONTENEDORA
+        <div class="box_free box_free-3">Caja LIBRE1</div>
+        <div class="box_free box_free-4">Caja LIBRE2</div>
+    </section>
+</body>
+
+</html>
