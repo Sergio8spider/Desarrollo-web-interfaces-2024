@@ -1,0 +1,108 @@
+/* RESETEO ESTILOS */
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    text-align: center;
+}
+
+.container {
+    /* float: left; */
+    border: 1px solid black;
+    width: 80%;
+    margin: auto;
+}
+
+.container_layout {
+    display: grid;
+    /* grid-template-columns: repeat(4,1fr);
+    grid-template-columns: calc(50%-10px) calc(25%-10px)calc(25%-10px); */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /*gestion de las columnas*/
+
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    /*gestion de las filas*/
+}
+
+.layout_box {
+    font-size: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    margin: 10px;
+    color: white;
+}
+
+.layout_box-red {
+    order: 1;
+    background-color: red;
+    grid-column-start: 1;
+    /*columna en la que empieza*/
+    grid-column-end: 3;
+    /*columna en la que acaba*/
+}
+
+.layout_box-yellow {
+    order: 2;
+    background-color: yellow;
+    color: black;
+}
+
+.layout_box-green {
+    order: 3;
+    background-color: green;
+}
+
+.layout_box-orange {
+    order: 4;
+    background-color: orange;
+}
+
+.layout_box-pink {
+    order: 5;
+    background-color: pink;
+}
+
+.layout_box-blue {
+    order: 6;
+    background-color: blue;
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.layout_box-cyan {
+    order: 7;
+    background-color: cyan;
+    color: black;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    /*columna en la que empieza*/
+    grid-row-end: 5;
+    /*columna en la que acaba*/
+}
+
+.layout_box-salmon {
+    order: 8;
+    background-color: salmon;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+.layout_box-negro {
+    order: 9;
+    background-color: black;
+    color: white;
+    grid-row: 3/5;
+    /*como row start y end pero junto*/
+}
+
+.layout_box-yellowGreen {
+    order: 10;
+    background-color: yellowgreen;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
