@@ -21,4 +21,65 @@ body {
     display: grid;
     grid-template-columns: 4fr 1fr;
     grid-template-rows: 120px 70px 2fr 70px;
+
+    grid-template-areas:
+        "cabecera cabecera"
+        /* 120px (arriba del todo y que ocupe el 100%)*/
+        "menu menu"
+        /* 70px (debajo de la cabecera y que ocupe el 100%)*/
+        "contenido lateral"
+        /* (debajo del menú y a la derecha del contenido) */
+        "footer footer"
+        /*(abajo del todo y ocupe el 100%)*/
+    ;
+    width: 98%;
+    height: 100vh;
+    margin: 0 auto;
+    border: 1px solid grey;
+}
+
+.website__header {
+    grid-area: cabecera;
+    align-content: center;
+    background-color: salmon;
+    color: white;
+}
+
+.website__menu {
+    grid-area: menu;
+    background-color: indianred;
+    color: white;
+    line-height: 70px;
+}
+
+.menu__list {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    list-style: none;
+}
+
+.website__content {
+    display: grid;
+    grid-area: contenido;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 20px;
+    grid-gap: 25px;
+}
+
+.content__article {
+    background-color: peachpuff;
+    border: 1px solid salmon;
+    color: white;
+}
+
+.website__sidebar {
+    grid-area: lateral;
+    background-color: salmon;
+    color: white;
+}
+
+.website__footer {
+    grid-area: footer;
+    background-color: black;
+    color: white;
 }
