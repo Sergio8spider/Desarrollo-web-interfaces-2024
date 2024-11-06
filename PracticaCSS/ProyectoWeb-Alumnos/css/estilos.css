@@ -28,7 +28,7 @@
 /* Definición Variables
  definimos familia de fuente que voy a utilizar */
 :root {
-    --mx-width: 1920px;
+    --mx-width: 1280px;
     --color-primary: #37bcf9;
     --color-secondary: #fff;
     --color-backgroung: #ccc;
@@ -55,9 +55,7 @@ body {
 }
 
 /* wrap queremos que los elementos "hijos" dispongan de estos estilos */
-.header__wrap,
-.content__wrap,
-.footer__wrap {
+.content__wrap{
     /* le asignamo 1200 para vista de escritorio */
     width: var(--mx-width);
     margin: 0px auto;
@@ -79,10 +77,14 @@ body {
     cursor: pointer;
 }
 
+.fotoPerfil{
+    margin-top: 4px;
+}
+
 .header {
     width: 100%;
     height: 70px;
-    background-color: rgb(85, 85, 89);
+    background-color: #664E3D;
     font-family: "BebasNeue";
     color: var(--color-text-white);
 }
