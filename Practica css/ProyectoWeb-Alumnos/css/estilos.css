@@ -28,7 +28,7 @@
 /* Definición Variables
  definimos familia de fuente que voy a utilizar */
 :root {
-    --mx-width: 1280px;
+    --mx-width: 1920px;
     --color-primary: #37bcf9;
     --color-secondary: #fff;
     --color-backgroung: #ccc;
@@ -55,11 +55,12 @@ body {
 }
 
 /* wrap queremos que los elementos "hijos" dispongan de estos estilos */
-.content__wrap{
+.content__wrap {
     /* le asignamo 1200 para vista de escritorio */
     width: var(--mx-width);
     margin: 0px auto;
     /* centra un elemento */
+    border-bottom: 1px solid black;
 }
 
 .logo__gear,
@@ -71,46 +72,68 @@ body {
 }
 
 /* Cabecera */
-.fotoHeader {
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-}
-
-.fotoPerfil{
-    margin-top: 4px;
+.header__wrap {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    margin-top: 10px;
 }
 
 .header {
     width: 100%;
     height: 70px;
-    background-color: #664E3D;
+    /* background-color: #7D482A; */
     font-family: "BebasNeue";
-    color: var(--color-text-white);
-}
-
-.header__wrap {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    color: #292929;
 }
 
 .header__logo {
-    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
     height: 50px;
     text-align: center;
-    margin-top: 8px;
+    margin-top: 12px;
     margin-left: 20px;
     letter-spacing: 1px;
     cursor: pointer;
     overflow: hidden;
     /* transición */
+    transition: all 200ms;
+}
+
+.header__logo:hover {
+    transform: scale(1.2);
+    color: orange;
+}
+
+.logo__foto {
+    width: 75px;
+    height: 75px;
+}
+
+.header__search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__search input[type="text"] {
+    width: 450px;
+}
+
+.header__search input[type="button"] {
+    width: 75px;
+}
+
+
+.header__search input[type="text"],
+input[type="button"] {
+    height: 40px;
 }
 
 .header__logo h3 {
-    display: block;
-    float: right;
     font-size: 40px;
-    margin-right: 65px;
     /* transición */
 }
 
@@ -120,7 +143,18 @@ body {
 /* efecto hover en Logo */
 
 
-/* animación logo silla */
+.header__logo .logo__gear {
+    display: block;
+    float: left;
+    font-size: 30px;
+    margin-top: 4px;
+    margin-left: 26px;
+
+    /* A la hora de crear animación */
+
+}
+
+/* animación logo rueda */
 
 
 /* efecto de desaparece y vuelve keyframes */
@@ -132,39 +166,67 @@ body {
     background: transparent;
 }
 
+.foto__perfil {
+    width: 75px;
+    height: 75px;
+    margin-top: 6px;
+}
+
 .menu__list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto;
 }
 
 .menu__list li {
     font-size: 24px;
-    display: inline-block;
-    /* puedo flotar con el float o bien mediante inline-block. Funcionaría igual */
     margin: 0px 20px 0px 20px;
     letter-spacing: 1px;
     line-height: 70px;
 }
 
-.menu__list li a {
-    display: block;
-    color: var(--color-text-white);
-    text-decoration: none;
-    /* transición */
+.list__item {
+    /* position */
+    position: relative;
+    margin: 0 2.4rem;
 }
 
-/* hover */
-
-.header_buscar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.item__title {
+    /* position */
+    position: relative;
+    line-height: 6rem;
+    font-weight: 500;
+    /* efecto */
+    transition: all 300ms ease-in-out;
 }
 
-.header_buscar input[type="text"],
-.header_buscar input[type="button"] {
+.item__submenu .submenu__item {
     font-size: 20px;
-    padding: 10px;
+}
+
+.item__title:hover {
+    color: var(--color-text-title);
+    transform: scale(1.1);
+}
+
+.subraya {
+    margin-top: 15px;
+}
+
+.subraya::before {
+    content: "";
+    position: absolute;
+    height: 0.2rem;
+    background-color: var(--color-primary);
+    bottom: 1.2rem;
+    left: 0;
+    width: 0%;
+    opacity: 0;
+    transition: all 350ms linear;
+}
+
+.subraya:hover::before {
+    width: 50%;
+    opacity: 1;
 }
 
 /* Maquetando el Banner */
@@ -183,7 +245,9 @@ body {
 /* keyframes */
 
 .content__banner h1 {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 850px;
     font-family: "BebasNeue";
     color: var(--color-text-white);
@@ -197,38 +261,41 @@ body {
 /* keyframes */
 
 /* Tarjetas */
+.content__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
 .cards__card {
-    float: left;
-    width: 200px;
     height: 260px;
-    border: 1px solid var(--color-backgroung);
-    box-shadow: 1px 1px 4px var(--color-box-shadow);
+    /* box-shadow: 1px 1px 4px var(--color-box-shadow); */
     overflow: hidden;
     margin: 22px;
     margin-top: 40px;
     cursor: pointer;
+    /* background-color: #EEEDE6; */
     /* transicion */
+    transition: all 400ms;
 
 }
 
 /*efecto hover en las cartas */
-
-
-.cards__card:last-child {
-    margin-right: 0px;
+.cards__card:hover {
+    transform: scale(1.1);
 }
 
-.cards__card .card__icon {
-    display: block;
-    width: 100%;
-    height: 110px;
+.cards__card .card__foto {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    width: 95%;
+    height: 85%;
     font-size: 50px;
     line-height: 90px;
     text-align: center;
-    margin: 0px auto;
 }
-
-/*efecto hover en la carta modificamos card__icon */
 
 /* keyframes */
 
@@ -236,7 +303,8 @@ body {
     width: 100%;
     height: 50px;
     font-family: "TrebuchetMS";
-    font-size: 21px;
+    font-size: 30px;
+    margin-bottom: 8px;
     font-weight: bold;
     text-align: center;
     color: var(--color-text-title);
@@ -244,17 +312,6 @@ body {
 }
 
 /*efecto hover en la carta - modificamos card_category */
-
-.card__description {
-    font-family: "TrebuchetMS";
-    text-align: center;
-    color: var(--color-text-title);
-    font-size: 14px;
-    /* transición */
-}
-
-/* efecto de hover en la carta. tocamos card__description */
-
 
 .clearfix {
     float: none;
