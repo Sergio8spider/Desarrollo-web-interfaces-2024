@@ -28,7 +28,7 @@
 /* Definición Variables
  definimos familia de fuente que voy a utilizar */
 :root {
-    --mx-width: 1920px;
+    --mx-width: 1500px;
     --color-primary: #37bcf9;
     --color-secondary: #fff;
     --color-backgroung: #ccc;
@@ -39,6 +39,12 @@
     --color-box-shadow: #ddd;
     --color-box-shadow2: #393d3f;
     --color-focus: #555;
+    /*Colores propios*/
+    --color1: #371b10;
+    --color2: #5d3720;
+    --color3: #8d5d33;
+    --color4: #c8904a;
+    --color5: #ffd368;
 }
 
 /* Estilos Generales */
@@ -51,7 +57,8 @@ html {
 }
 
 body {
-    background: url("../img/pattern.png");
+    background-color: white;
+    margin-top: 6%;
 }
 
 /* wrap queremos que los elementos "hijos" dispongan de estos estilos */
@@ -79,11 +86,14 @@ body {
 }
 
 .header {
+    position: fixed;
+    z-index: 5;
     width: 100%;
     height: 70px;
-    /* background-color: #7D482A; */
     font-family: "BebasNeue";
-    color: #292929;
+    background-color: rgb(197, 165, 121);
+    margin-top: 0px;
+    top: 0;
 }
 
 .header__logo {
@@ -93,18 +103,19 @@ body {
     width: 500px;
     height: 50px;
     text-align: center;
-    margin-top: 12px;
+    margin-top: 3px;
     margin-left: 20px;
     letter-spacing: 1px;
     cursor: pointer;
     overflow: hidden;
+    color: white;
     /* transición */
     transition: all 200ms;
 }
 
 .header__logo:hover {
     transform: scale(1.2);
-    color: orange;
+    color: var(--color3);
 }
 
 .logo__foto {
@@ -112,10 +123,16 @@ body {
     height: 75px;
 }
 
+.header__logo h3 {
+    font-size: 40px;
+    /* transición */
+}
+
 .header__search {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -21px
 }
 
 .header__search input[type="text"] {
@@ -124,35 +141,20 @@ body {
 
 .header__search input[type="button"] {
     width: 75px;
+    background-color: var(--color3);
 }
 
+.header__search input[type="button"].search__icon {
+    color: white;
+}
 
 .header__search input[type="text"],
 input[type="button"] {
     height: 40px;
 }
 
-.header__logo h3 {
-    font-size: 40px;
-    /* transición */
-}
-
 /* efecto con keyframes - hover en el Logo */
 
-
-/* efecto hover en Logo */
-
-
-.header__logo .logo__gear {
-    display: block;
-    float: left;
-    font-size: 30px;
-    margin-top: 4px;
-    margin-left: 26px;
-
-    /* A la hora de crear animación */
-
-}
 
 /* animación logo rueda */
 
@@ -169,25 +171,27 @@ input[type="button"] {
 .foto__perfil {
     width: 75px;
     height: 75px;
-    margin-top: 6px;
+    margin-top: -12px;
 }
 
 .menu__list {
     display: grid;
     grid-template-columns: auto auto auto;
+    height: 50px;
 }
 
 .menu__list li {
     font-size: 24px;
-    margin: 0px 20px 0px 20px;
     letter-spacing: 1px;
     line-height: 70px;
+    color: white;
 }
 
 .list__item {
     /* position */
     position: relative;
-    margin: 0 2.4rem;
+    margin-top: -8px;
+    height: 50px;
 }
 
 .item__title {
@@ -204,19 +208,19 @@ input[type="button"] {
 }
 
 .item__title:hover {
-    color: var(--color-text-title);
+    color: var(--color3);
     transform: scale(1.1);
 }
 
 .subraya {
-    margin-top: 15px;
+    margin-top: 8px;
 }
 
 .subraya::before {
     content: "";
     position: absolute;
     height: 0.2rem;
-    background-color: var(--color-primary);
+    background-color: var(--color3);
     bottom: 1.2rem;
     left: 0;
     width: 0%;
@@ -225,24 +229,22 @@ input[type="button"] {
 }
 
 .subraya:hover::before {
-    width: 50%;
+    width: 37%;
     opacity: 1;
 }
 
 /* Maquetando el Banner */
+
 .content__banner {
-    width: 95.5%;
-    height: 100px;
-    border: 10px solid var(--color-text-white);
+    position: relative;
+    width: var(--mx-width);
+    height: 700px;
+    background-size: 100% 100%;
     box-shadow: 0px 0px 2px var(--color-gray);
-    background: url("../img/bakbaner.png");
-    background-position: -200px -200px;
+    background-image: url("../img/bannerFondo2.jpg");
     margin: 20px auto;
     overflow: hidden;
-    /* animación */
 }
-
-/* keyframes */
 
 .content__banner h1 {
     display: flex;
@@ -255,7 +257,27 @@ input[type="button"] {
     letter-spacing: 2px;
     text-shadow: 2px 2px 1px var(--color-bg);
     margin: 10px auto;
-    /* animación */
+    margin-top: 6%;
+}
+
+.content__banner .banner__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: var(--color-text-white);
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin: 10px auto;
+    transition: all 500ms;
+}
+
+.content__banner .banner__btn:hover {
+    cursor: pointer;
+    background-color: white;
+    color: var(--color1);
 }
 
 /* keyframes */
@@ -263,7 +285,7 @@ input[type="button"] {
 /* Tarjetas */
 .content__cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
 }
