@@ -58,15 +58,12 @@ html {
 
 body {
     background-color: white;
-    margin-top: 6%;
+    margin-top: 5%;
 }
 
-/* wrap queremos que los elementos "hijos" dispongan de estos estilos */
 .content__wrap {
-    /* le asignamo 1200 para vista de escritorio */
     width: var(--mx-width);
     margin: 0px auto;
-    /* centra un elemento */
     border-bottom: 1px solid black;
 }
 
@@ -222,14 +219,14 @@ input[type="button"] {
     height: 0.2rem;
     background-color: var(--color3);
     bottom: 1.2rem;
-    left: 0;
+    left: -6px;
     width: 0%;
     opacity: 0;
     transition: all 350ms linear;
 }
 
 .subraya:hover::before {
-    width: 37%;
+    width: 42%;
     opacity: 1;
 }
 
@@ -285,19 +282,19 @@ input[type="button"] {
 /* Tarjetas */
 .content__cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
 }
 
 .cards__card {
-    height: 260px;
+    height: 280px;
     /* box-shadow: 1px 1px 4px var(--color-box-shadow); */
     overflow: hidden;
     margin: 22px;
     margin-top: 40px;
     cursor: pointer;
-    /* background-color: #EEEDE6; */
+    background-color: rgba(167, 125, 28, 0.636);
     /* transicion */
     transition: all 400ms;
 
@@ -312,40 +309,205 @@ input[type="button"] {
     display: flex;
     align-self: center;
     justify-self: center;
-    width: 95%;
+    width: 100%;
     height: 85%;
     font-size: 50px;
     line-height: 90px;
     text-align: center;
 }
 
-/* keyframes */
-
 .card__category {
     width: 100%;
     height: 50px;
-    font-family: "TrebuchetMS";
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 30px;
-    margin-bottom: 8px;
+    margin-bottom: 1px;
     font-weight: bold;
     text-align: center;
-    color: var(--color-text-title);
+    color: white;
     transition: all 500ms;
 }
 
 /*efecto hover en la carta - modificamos card_category */
 
-.clearfix {
-    float: none;
-    clear: both;
+.card__category:before {
+    content: "";
+    position: absolute;
+    height: 0.2rem;
+    background-color: white;
+    bottom: 1.2rem;
+    left: 28%;
+    top: 14%;
+    width: 0%;
+    opacity: 0;
+    transition: all 350ms linear;
 }
+
+.cards__card:hover .card__category::before {
+    width: 45%;
+    opacity: 1;
+}
+
+/* Artículos */
+.content__all {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+}
+
+.content__articles {
+    width: 1100px;
+}
+
+.articles__title {
+    width: 60%;
+    height: 75px;
+    line-height: 75px;
+    /* centra el texto */
+    text-align: center;
+    font-family: "BebasNeue";
+    font-size: 40px;
+    font-weight: 24px;
+    letter-spacing: 2px;
+    background: var(--color4);
+    color: white;
+    box-shadow: 0px 1px 0px var(--color-box-shadow2), 1px 2px 0px var(--color-box-shadow2), 2px 3px 0px var(--color-box-shadow2), 3px 4px 0px var(--color-box-shadow2);
+    margin: 0px auto;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.all__articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.articles__article {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    width: 98%;
+    height: 450px;
+    border: 1px solid var(--color-backgroung);
+    margin: 40px auto;
+    padding: 10px;
+    font-family: "TrebuchetMS";
+    background: var(--color-text-white);
+    color: var(--color-bg);
+    box-shadow: 1px 1px 2px var(--color-box-shadow);
+}
+
+
+.article__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.article__img {
+    position: absolute;
+    top: 20px;
+}
+
+.article__img img {
+    width: 220px;
+    height: 200px;
+}
+
+.article__precio {
+    position: absolute;
+    font-size: 35px;
+    transition: all 300ms ease-in-out;
+    height: auto;
+    bottom: 60px;
+    color: black;
+    font-family: "BebasNeue";
+}
+
+.article__precio-tachado {
+    position: absolute;
+    font-size: 25px;
+    transition: all 300ms ease-in-out;
+    height: auto;
+    bottom: 15px;
+    color: black;
+    font-family: "BebasNeue";
+}
+
+.article__subtitle {
+    position: absolute;
+    font-size: 40px;
+    transition: all 300ms ease-in-out;
+    height: auto;
+    bottom: 120px;
+    color: green;
+    font-family: "BebasNeue";
+    cursor: pointer;
+}
+
+
+.article__subtitle:hover {
+    transform: scale(1.1);
+}
+
+.article__subtitle::before {
+    content: "";
+    position: absolute;
+    height: 0.2rem;
+    background-color: green;
+    bottom: 1.2rem;
+    width: 0%;
+    top: 47px;
+    opacity: 0;
+    transition: all 350ms linear;
+}
+
+.article__subtitle:hover::before {
+    width: 100%;
+    opacity: 1;
+}
+
+.article__description {
+    position: relative;
+    top: 30px;
+    right: 15px;
+}
+
+.article__description p {
+    width: 190px;
+    font-size: 20px;
+    right: 10px;
+}
+
+.description__colores {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.colores__color img {
+    width: 30px;
+    height: 30px;
+    margin: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+.colores__color img:hover {
+    transform: scale(1.2);
+}
+
+/* efecto de hover sobre articles__blog */
+
 
 /* Barra lateral */
 .content__lateral {
     width: 300px;
     min-height: 1070px;
     font-family: "TrebuchetMS";
-    float: right;
     margin: 20px;
 }
 
@@ -393,20 +555,6 @@ input[type="button"] {
 
 /* obtengo foco en input[type="text"] */
 
-
-.lateral__search input[type="button"],
-.lateral__search input[type="text"] {
-    height: 30px;
-    cursor: pointer;
-    font-size: 16px;
-    background-color: transparent;
-    /* para que no tenga fondo */
-    border: none;
-    /* para que se integre con el campo en sí */
-    border-left: 1px solid var(--color-backgroung);
-    color: var(--color-focus);
-    padding-left: 6px;
-}
 
 .aside-box {
     width: 85%;
@@ -458,8 +606,6 @@ input[type="button"] {
 .lateral__login input[type="button"],
 .lateral__login input[type="reset"],
 .lateral__login button {
-    /* display: block; */
-    float: left;
     text-align: center;
     width: 100px;
     height: 35px;
@@ -534,109 +680,11 @@ input[type="button"] {
 
 /* efecto hover sobre el div de lateral__social */
 
-
-/* Artículos */
-.content__articles {
-    float: left;
-    /* es necesario flotarlo puesto que he incluido el div clearfix*/
-    width: 860px;
-}
-
-.content__articles h2 {
-    display: block;
-    width: 100%;
-    height: 75px;
-    line-height: 75px;
-    /* centra el texto */
-    text-align: center;
-    font-family: "BebasNeue";
-    font-size: 40px;
-    font-weight: normal;
-    letter-spacing: 2px;
-    background: url("../img/pxvar(--color-gray).png"), var(--color-text-white);
-    box-shadow: 0px 1px 0px var(--color-box-shadow2), 1px 2px 0px var(--color-box-shadow2), 2px 3px 0px var(--color-box-shadow2), 3px 4px 0px var(--color-box-shadow2);
-    margin: 0px auto;
-    margin-top: 20px;
-    margin-bottom: 15px;
-}
-
-.articles__article {
-    width: 98%;
-    height: auto;
-    border: 1px solid var(--color-backgroung);
-    margin: 40px auto;
-    padding: 10px;
-    font-family: "TrebuchetMS";
-    background: var(--color-text-white);
-    color: var(--color-bg);
-    box-shadow: 1px 1px 2px var(--color-box-shadow);
-}
-
-.articles__article h4 {
-    display: block;
-    font-size: 23px;
-    margin: 3px;
-}
-
-.articles__article h4 a {
-    text-decoration: none;
-    color: var(--color-text-title);
-}
-
-.articles__article h4 a:hover {
-    text-decoration: underline;
-}
-
-.article__datos {
-    float: right;
-    background-color: var(--color-box-shadow2);
-    color: var(--color-text-white);
-    height: 30px;
-    line-height: 30px;
-    margin: -10px;
-    padding: 4px;
-    font-size: 13px;
-    border-radius: 0px 0px 0px 5px;
-    /* esquina inferior izq 5px */
-}
-
-.article__datos span {
-    margin: 6px;
-}
-
-.article__datos p {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 15px;
-}
-
-.articles__blog {
-    height: 100px;
-    margin-top: 60px;
-    line-height: 100px;
-    text-align: center;
-    font-family: "BebasNeue";
-    /* transición */
-
-}
-
-.articles__blog a {
-    font-family: "BebasNeue";
-    font-size: 40px;
-    letter-spacing: 3px;
-    color: var(--color-text-title);
-    text-decoration: none;
-    /* transición */
-}
-
-/* efecto de hover sobre articles__blog */
-
-
 /* FOOTER */
 .content__footer {
     width: 100%;
     height: 470px;
-    background-color: black;
+    background-color: var(--color1);
     color: var(--color-text-white);
     overflow: hidden;
 }
