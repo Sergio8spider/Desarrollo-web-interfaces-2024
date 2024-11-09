@@ -29,6 +29,8 @@
  definimos familia de fuente que voy a utilizar */
 :root {
     --mx-width: 1500px;
+    --mx-width-tablet: 1024px;
+    --mx-width-movil: 600px;
     --color-primary: #37bcf9;
     --color-secondary: #fff;
     --color-backgroung: #ccc;
@@ -234,6 +236,97 @@ input[type="button"] {
     opacity: 1;
 }
 
+@media (max-width: 1024px) {
+    .header__wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        position: fixed;
+        z-index: 5;
+        width: 100%;
+        height: 200px;
+    }
+
+    .header__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        height: 50px;
+        text-align: center;
+        margin-top: 3px;
+        margin-left: 220px;
+    }
+
+    .header__search {
+        margin-top: 10px;
+    }
+
+    .header__logo h3 {
+        font-size: 60px;
+    }
+
+    .header__menu {
+        margin-left: 320px;
+        margin-top: 10px;
+    }
+
+    .foto__perfil {
+        margin-top: 0px;
+    }
+
+    .list__item {
+        /* position */
+        position: relative;
+        margin-top: 0px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header__wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .header {
+        position: fixed;
+        z-index: 5;
+        width: var(--mx-width-movil);
+        height: 270px;
+    }
+
+    .header__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        height: 50px;
+        text-align: center;
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+
+    .header__search {
+        margin-left: 20px;
+        width: 600px;
+    }
+
+    .header__menu {
+        margin-left: 100px;
+    }
+
+    .list__item {
+        /* position */
+        position: relative;
+        margin-top: 0px;
+        height: 50px;
+    }
+}
+
 /* Maquetando el Banner */
 
 .content__banner {
@@ -350,6 +443,86 @@ input[type="button"] {
 .cards__card:hover .card__category::before {
     width: 45%;
     opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    body {
+        margin-top: 250px;
+    }
+
+    .content__banner {
+        width: var(--mx-width-tablet);
+        margin: 20px auto;
+        margin-right: 500px;
+    }
+
+    .content__banner .banner__btn {
+        width: 250px;
+        height: 60px;
+        font-size: 30px;
+    }
+
+    /* Tarjetas */
+    .content__cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        width: var(--mx-width-tablet);
+    }
+
+    .cards__card {
+        height: 260px;
+        width: 460px;
+        /* box-shadow: 1px 1px 4px var(--color-box-shadow); */
+        overflow: hidden;
+        margin: 22px;
+        margin-top: 40px;
+
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        margin-top: 270px;
+    }
+
+    .content__banner {
+        width: var(--mx-width-tablet);
+        margin: 20px auto;
+        margin-right: 500px;
+    }
+
+    .content__banner h1 {
+        justify-content: left;
+        font-size: 40px;
+    }
+
+    .content__banner .banner__btn {
+        width: 200px;
+        border: 1px solid white;
+        background-color: transparent;
+        color: var(--color-text-white);
+        font-size: 20px;
+        letter-spacing: 2px;
+        margin-right: 610px;
+    }
+
+    /* Tarjetas */
+    .content__cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        width: var(--mx-width-movil);
+    }
+
+    .cards__card {
+        height: 300px;
+        width: 500px;
+        margin-left: 50px;
+
+    }
 }
 
 /* Artículos */
@@ -504,8 +677,75 @@ input[type="button"] {
     transform: scale(1.2);
 }
 
-/* efecto de hover sobre articles__blog */
+@media (max-width: 1024px) {
+    .content__all {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+    }
 
+    .content__articles {
+        width: 1100px;
+    }
+
+    .articles__title {
+        width: 50%;
+        margin-left: 500px;
+    }
+
+    .all__articles {
+        grid-template-columns: 1fr;
+    }
+
+    .articles__article {
+        width: 46%;
+        margin-left: 500px;
+    }
+
+
+    .article__content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .article__img {
+        position: absolute;
+        top: 20px;
+    }
+
+    .article__img img {
+        width: 220px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .content__all {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    .content__articles {
+        width: 1100px;
+    }
+
+    .articles__title {
+        width: 50%;
+        margin-left: 28px;
+    }
+
+    .all__articles {
+        grid-template-columns: 1fr;
+    }
+
+    .articles__article {
+        width: 46%;
+        margin-left: 45px;
+    }
+}
 
 /* Barra lateral */
 .content__lateral {
@@ -684,6 +924,12 @@ input[type="button"] {
     justify-self: center;
 }
 
+.sponsor h2 {
+    display: flex;
+    justify-self: center;
+    font-size: 20px;
+}
+
 .sponsor__img {
     width: 70px;
     border-radius: 40%;
@@ -697,6 +943,38 @@ input[type="button"] {
 
 .sponsor__img:hover {
     transform: scale(1.2);
+}
+
+@media (max-width: 1024px) {
+    .content__lateral {
+        width: 300px;
+        margin-right: 1000px;
+        min-height: 1070px;
+        font-family: "TrebuchetMS";
+        margin-left: 40px;
+        margin-top: 90px;
+    }
+}
+
+@media (max-width: 600px) {
+    .content__lateral {
+        width: 500px;
+        margin-right: 900px;
+        min-height: 1070px;
+        font-family: "TrebuchetMS";
+        margin-left: 40px;
+        margin-top: 90px;
+    }
+
+    .lateral__login input[type="submit"],
+    .lateral__login input[type="reset"] {
+        margin-left: 80px;
+    }
+
+    .lateral__login .lateral-box__user,
+    .lateral__login .lateral-box__password {
+        margin-left: 15px;
+    }
 }
 
 /* FOOTER */
@@ -809,9 +1087,47 @@ input[type="button"] {
     width: 45px;
 }
 
-/* Animaciones y Transiciones
-- Propiedad Animation
-- Keyframes
-- Transitions 
+@media (max-width: 1024px) {
+    .content__footer {
+        height: 500px;
+    }
 
-Indico cada punto aplicado como efecto*/
+    .footer__title {
+        font-size: 30px;
+    }
+
+    .footer__list__item a {
+        font-size: 20px;
+    }
+
+    .footer__list li {
+        margin-top: 5px;
+        padding: 13px;
+        border-bottom: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer__wrap {
+        grid-template-columns: 1fr;
+        width: var(--mx-width-movil);
+    }
+
+    .content__footer {
+        height: 1230px;
+    }
+
+    .footer__title {
+        font-size: 30px;
+    }
+
+    .footer__list__item a {
+        font-size: 20px;
+    }
+
+    .footer__list li {
+        margin-top: 5px;
+        padding: 13px;
+        border-bottom: 0;
+    }
+}
