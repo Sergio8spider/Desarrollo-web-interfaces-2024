@@ -1,0 +1,114 @@
+//  variables
+$b: 'body';
+$color-fondo: #ccc;
+$color-letra: black;
+$color-letra2: rgb(3, 97, 3);
+$color-fondo2: blue;
+
+
+body {
+    background-color: $color-fondo;
+}
+
+
+h1 {
+    color: $color-letra;
+    background-color: $color-fondo2;
+}
+
+
+/* Anidacion */
+.caja {
+    border: 1px solid black;
+    margin: 0px auto;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+
+    h2 {
+        color: $color-letra2;
+    }
+
+    .info {
+        border: 1px sold black;
+
+        h2 {
+            color: $color-letra;
+            font-size: 18px;
+        }
+    }
+}
+
+
+// Mixins - Funciones
+@mixin crearBorder5-sombra() {
+    border: 5px solid gray;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px black;
+}
+
+.caja {
+    @include crearBorder5-sombra();
+}
+
+
+@mixin crearCorder5-sombraParam9($color, $sizeB, $sizeS, $shadow, $sizeBR) {
+    border: $sizeB solid $color;
+    border-radius: $sizeBR;
+    box-shadow: 0px 0px $sizeS $shadow;
+}
+
+.caja2 {
+    @include crearCorder5-sombraParam9(black, 5px, 10px, gray, 20px);
+
+
+    h2 {
+        color: $color-letra2;
+    }
+}
+
+
+// Herencia Sass
+%alerta-normal {
+    @include crearCorder5-sombraParam9(yellow, 5px, 10px, gray, 20px);
+    padding: 10px;
+    width: 75%;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+.alerta {
+    @extend %alerta-normal;
+}
+
+//Operadores
+h4 {
+    font-size: 32px + 5px - 1px;
+}
+
+$caja: 200px;
+$wrap: 900px;
+
+.cajas {
+    width: $wrap;
+    border: 1px solid black;
+}
+
+.cajaOp {
+    float: left;
+    margin: 10px;
+    width: ($caja/$wrap)*100%;
+}
+
+//Condicionales Sass - If
+$color-fondo: black;
+
+h1 {
+    @if $color-fondo==#ccc {}
+
+    @else if $color-fondo ==black {}
+
+    @else {}
+}
