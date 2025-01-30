@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            $(document).on("keydown", function () {
+                event.preventDefault();
+                var ascii = event.which;
+                var ascii1 = ascii++;
+                var nChar = String.fromCharCode(ascii1);
+                var texto = $("#output").val();
+                $("#output").val(texto + nChar);
+            });
+        });
+    </script>
+</body>
+
+</html>

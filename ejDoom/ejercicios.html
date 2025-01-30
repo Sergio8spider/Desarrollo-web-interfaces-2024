@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <!-- 1. Revisión del DOM y Ejecución del Código jQuery -->
+    <!-- Ejercicio 1: Selecciona el elemento con la clase .item y cámbiale el texto. -->
+    <input type="text" value="Hola" class="cambio">
+    <script>
+        $(".cambio").val("Hola mundo");
+    </script>
+    <!-- Ejercicio 2: Selecciona el primer elemento con la clase .producto y cambia su color de fondo a azul. -->
+    <h2 class="producto">Buenas</h2>
+    <h2 class="producto">Buenas</h2>
+    <script>
+        $(".producto:first").css("background-color", "green");
+    </script>
+    <!-- Ejercicio 3: Accede al primer <div> de la página y agrega el texto "Hola Mundo". -->
+    <div>DIV</div>
+    <div>DIV</div>
+    <script>
+        $("div:first").text("Hola mundo");
+    </script>
+    <!-- Ejercicio 4: Selecciona el elemento con id #titulo y cambia su color a rojo. -->
+    <input type="text" id="titulo" value="Input">
+    <script>
+        $("#titulo").css("color", "red");
+    </script>
+    <!-- Ejercicio 5: Accede a todos los elementos <p> en la página y cambia su tamaño de fuente a 18px. -->
+    <p>Parrafo 1</p>
+    <p>Parrafo 2</p>
+    <script>
+        $("p").css("font-size", "18px");
+    </script>
+    <!-- Ejercicio 6: Añade un nuevo elemento <li> al final de una lista con id #lista. -->
+    <ul id="lista">
+        LISTA
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <script>
+        var nuevoLi = $('<li></li>').text("hola")
+        $("#lista").append(nuevoLi);
+    </script>
+    <!-- Ejercicio 7: Accede al contenido del elemento con id #descripcion y muestra el valor en consola. -->
+    <textarea id="descripcion">Hola soy una descripcion sdsds</textarea>
+    <script>
+        console.log($("#descripcion").text());
+    </script>
+    <br><br>
+    <!-- Ejercicio 8: Obtén todos los elementos con la clase .carta y cambia su color de borde a verde. -->
+    <input type="text" class="carta" value="Carta 1">
+    <input type="text" class="carta" value="Carta 2">
+    <script>
+        $(".carta").css("border", "1px solid green");
+    </script>
+    <!-- Ejercicio 9: Elimina todos los elementos con la clase .eliminar. -->
+    <h2 class="eliminar">Borrar</h2>
+    <h2>Borrar 2</h2>
+    <script>
+        $(".eliminar").remove();
+    </script>
+    <!-- Ejercicio 10: Selecciona todos los <span> dentro de un <div> con id #contenedor y cambia su color de fondo a gris. -->
+    <div id="contenedor">
+        <span>Span 1</span>
+        <p>NO</p>
+        <span>Span 2</span>
+    </div>
+    <script>
+        $("#contenedor span").css("background-color", "grey");
+    </script>
+    <!-- 2. Funciones de DOM -->
+    <!-- Ejercicio 11: Selecciona todos los elementos con la clase .foto y ocúltalos. -->
+    <p class="foto">Foto1</p>
+    <p>Foto2</p>
+    <p class="foto">Foto3</p>
+    <script>
+        $(".foto").hide();
+    </script>
+    <!-- Ejercicio 12: Añade un borde rojo a todos los elementos <h1> dentro de un <div>. -->
+    <div>
+        <h1>H1</h1>
+        <h1>H1</h1>
+    </div>
+    <script>
+        $("div h1").css("border", "1px solid red");
+    </script>
+    <!-- Ejercicio 13: Accede a todos los elementos de tipo <input> y establece su valor como "Texto predeterminado". -->
+    <input type="text" value=caca>
+    <script>
+        $("input").val("Texo predeterminado");
+    </script>
+    <!-- Ejercicio 14: Selecciona el segundo <div> en el documento y cámbiale el fondo a amarillo. -->
+    <script>
+        $("div").eq(1).css("background-color", "yellow");
+    </script>
+    <!-- Ejercicio 15: Añade un class llamado activo a todos los <a> dentro de un <nav>. -->
+        <nav>
+            <a >SIUUU</a>
+            <a >EYYY</a>
+        </nav>
+    <script>
+        $("nav a").addClass("activo");
+    </script>
+    <!-- Ejercicio 16: Inserta un nuevo párrafo al principio del <body> con el texto "Bienvenido". -->
+        
+        <script>
+            $("body").prepend("<p>Bienvenido</p>");
+        </script>
+    <!-- Ejercicio 17: Cambiar el src de una imagen con id #imagen a una nueva URL. -->
+    <img src="#" id="imagen">
+    <script>
+        $("#imagen").attr("src","../PRACTICA BOOTSTRAP/recursos/contacto.jpg")
+     </script>
+     
+    <!-- Ejercicio 18: Establece un atributo data-id en todos los elementos con la clase .producto. -->
+    <!-- Ejercicio 19: Cambiar el valor de un <input> con id #nombre a "Juan Pérez". -->
+    <!-- Ejercicio 20: Añadir un título en el <head> que diga "Página Web Interactiva". -->
+
+</body>
+
+</html>
